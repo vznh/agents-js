@@ -452,10 +452,10 @@ export class RealtimeSession extends llm.RealtimeSession {
   // Ref: python livekit-plugins/livekit-plugins-openai/livekit/plugins/openai/realtime/realtime_model.py - 795-797 lines
   // per-session copy of options so updateOptions can diff against the session's
   // own state instead of the shared model-level state.
-  private _options: RealtimeOptions;
+  protected _options: RealtimeOptions;
   protected currentGeneration?: ResponseGeneration | DiscardedGeneration;
-  private responseCreatedFutures: { [id: string]: CreateResponseHandle } = {};
-  private discardedEventIds = new Set<string>();
+  protected responseCreatedFutures: { [id: string]: CreateResponseHandle } = {};
+  protected discardedEventIds = new Set<string>();
 
   private textModeRecoveryRetries: number = 0;
 
@@ -507,7 +507,7 @@ export class RealtimeSession extends llm.RealtimeSession {
     this.messageChannel.put(command);
   }
 
-  private createSessionUpdateEvent(): api_proto.SessionUpdateEvent {
+  protected createSessionUpdateEvent(): api_proto.SessionUpdateEvent {
     const opts = this._options;
     const maxOutputTokens =
       opts.maxResponseOutputTokens === Infinity ? 'inf' : opts.maxResponseOutputTokens;
