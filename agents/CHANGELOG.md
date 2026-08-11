@@ -1,5 +1,19 @@
 # @livekit/agents
 
+## 1.7.0
+
+### Minor Changes
+
+- Expose prompt-cache creation token counts in LLM metrics and model usage. - [#2257](https://github.com/livekit/agents-js/pull/2257) ([@rosetta-livekit-bot](https://github.com/apps/rosetta-livekit-bot))
+
+### Patch Changes
+
+- Default null token counts in OpenAI-compatible streaming usage payloads to zero. - [#2250](https://github.com/livekit/agents-js/pull/2250) ([@rosetta-livekit-bot](https://github.com/apps/rosetta-livekit-bot))
+
+- Avoid throwing when interrupting protected speech that was already interrupted or completed. - [#2252](https://github.com/livekit/agents-js/pull/2252) ([@rosetta-livekit-bot](https://github.com/apps/rosetta-livekit-bot))
+
+- Keep defaulted const fields non-nullable in strict tool schemas. - [#2262](https://github.com/livekit/agents-js/pull/2262) ([@rosetta-livekit-bot](https://github.com/apps/rosetta-livekit-bot))
+
 ## 1.6.2
 
 ### Patch Changes
